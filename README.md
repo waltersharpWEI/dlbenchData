@@ -49,3 +49,4 @@ May 24, 2017:
 - yaroslavvb helped improve the performance of CNTK CIFAR by keeping variables on CPU. Thank you!
 - tfboyd optimized the scripts for tensorflow by changing the image processing place to CPU and some other tweaks making tensorflow run faster then before. Thank you!   
 - testbm.sh in tools/common updated. Scripts for testing on CPU added. 
+#dlbenchData
