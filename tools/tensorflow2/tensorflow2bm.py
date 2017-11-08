@@ -27,8 +27,8 @@ args = parser.parse_args()
 os.environ['OMP_NUM_THREADS'] = args.cpuCount 
 os.environ['OPENBLAS_NUM_THREADS'] = args.cpuCount 
 os.environ['MKL_NUM_THREADS'] = args.cpuCount 
-if os.path.exists('%s/tf12/bin' % os.environ['HOME']):
-    os.system('source %s/tf12/bin/activate' % os.environ['HOME'])
+#if os.path.exists('%s/tf12/bin' % os.environ['HOME']):
+#    os.system('source %s/tf12/bin/activate' % os.environ['HOME'])
 
 # Build cmd for benchmark
 root_path = os.path.dirname(os.path.abspath(__file__))
@@ -51,7 +51,7 @@ t = time.time() - t
 ## Parse log file and extract benchmark info
 os.chdir(root_path)
 
-print(subprocess.check_output("python ../common/extract_info.py -f " + log_path + " -t tensorflow2", shell=True))
+#print(subprocess.check_output("python ../common/extract_info.py -f " + log_path + " -t tensorflow2", shell=True))
 
 
 #os.system("cat " + log_path)
