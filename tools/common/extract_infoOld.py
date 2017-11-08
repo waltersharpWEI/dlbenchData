@@ -176,20 +176,7 @@ def extract_info_tensorflow(filename):
             seq_str = ','.join(new_seq_split)
             #seq_str = new_seq_split
     return total_time, average_batch_time, seq_str
-def extract_info_tensorflow2(filename):
-    f = open(filename)
-    content = f.readlines()
-    average_batch_time = 0
-    batch_size = 1
-    total_time = 0
-    seq_str = None
-    for index,line in enumerate(content):
-        if line.find('total images/sec') >= 0:
-            average_batch_time = 1/float(line.split(':')[1])*batch_size
-        if line.find('Total time:') >= 0:
-            total_time = float(line.split(':')[1].strip())
- 
-    return total_time, average_batch_time, seq_str
+
 
 def extract_info_torch(filename):
     f = open(filename)
@@ -233,8 +220,6 @@ def extract_info(filename, tool, batch_size=32):
         return extract_info_mxnet(filename)
     elif tool == 'tensorflow':
         return extract_info_tensorflow(filename)
-    elif tool == 'tensorflow2':
-        return extract_info_tensorflow2(filename)
     elif tool == 'torch':
         return extract_info_torch(filename)
 
